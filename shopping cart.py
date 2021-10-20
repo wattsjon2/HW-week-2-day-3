@@ -25,7 +25,10 @@ def shopping_cart():
                 for key, value in cart.items():
                     print(f'{key}                {value}')
                 del_item = input("Please enter the item number of the item you would like to delete? ") 
-                if int(del_item) not in cart.keys():
+                if del_item.isnumeric() == False:
+                    print("please enter a number")
+
+                elif int(del_item) not in cart.keys():
                     print("please enter a valid item for your cart")
                 else:
                     del cart[int(del_item)]
